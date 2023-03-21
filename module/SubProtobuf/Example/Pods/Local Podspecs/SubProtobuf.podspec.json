@@ -1,0 +1,22 @@
+{
+  "name": "SubProtobuf",
+  "version": "0.1.0",
+  "summary": "A short description of SubProtobuf.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/chenmu/SubProtobuf",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "chenmu": "chenmu@xiaohongshu.com"
+  },
+  "source": {
+    "git": "https://github.com/chenmu/SubProtobuf.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "SubProtobuf/Classes/**/*"
+}

@@ -1,0 +1,6 @@
+use_frameworks!
+target 'SubProtobuf_Tests' do
+  pod 'SubProtobuf', :path => '../'
+  
+  
+end
