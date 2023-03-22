@@ -1,0 +1,23 @@
+PODS:
+  - SubProtobuf (0.1.0):
+    - SwiftProtobuf
+  - SwiftProtobuf (1.21.0)
+
+DEPENDENCIES:
+  - SubProtobuf (from `./module/SubProtobuf`)
+
+SPEC REPOS:
+  trunk:
+    - SwiftProtobuf
+
+EXTERNAL SOURCES:
+  SubProtobuf:
+    :path: "./module/SubProtobuf"
+
+SPEC CHECKSUMS:
+  SubProtobuf: 63f20b53062d773825df78e08b161c197101322c
+  SwiftProtobuf: afced68785854575756db965e9da52bbf3dc45e7
+
+PODFILE CHECKSUM: c0e1923425989d61a0e7ddb3d65c45d0744dd1bf
+
+COCOAPODS: 1.11.3

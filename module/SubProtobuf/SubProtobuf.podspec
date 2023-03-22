@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+ Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/chenmu/SubProtobuf'
@@ -28,15 +28,18 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/chenmu/SubProtobuf.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '11.0'
 
-  s.source_files = 'SubProtobuf/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SubProtobuf' => ['SubProtobuf/Assets/*.png']
-  # }
+  s.source_files = ['SubProtobuf/Classes/**/*', 'out/include/**/*.h']
+  s.prepare_command = "echo ${CWD}; make ios"
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.vendored_libraries = 'out/**/*.a'
+ s.vendored_frameworks = 'out/*.xcframework'
+#  s.public_header_files = ['out/**/*.h']
+
+  s.dependency 'SwiftProtobuf'
+  # s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => 'out/' }
+
 end
+
+# 我有一个xcframework，结构如下 - libStatic.xcframework: - Info.plist - ios-arm64 - libStatic.a - ios-x86_64-simulator - libStatic.a，还有一个header文件是libStatic的，在podspec里通过source_files引用,我在podspec里面是通过vendered_frameworks=‘libStatic.xcframework'引用的，我在主工程里面引用了header文件里的对象，报错undefined_symbol，问题出在哪

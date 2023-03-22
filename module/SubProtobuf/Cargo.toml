@@ -1,0 +1,17 @@
+[workspace]
+members = [
+    "logic/cache",
+    "logic/config",
+    "logic/logic",
+    "logic/mock_gen",
+    "logic/protos",
+    "logic/service",
+    "logic/text",
+    "logic/workspace-hack",
+]
+
+[profile.production]
+inherits = "release"
+opt-level = "s"   # Optimize for size.
+lto = true        # Enable link time optimization
+codegen-units = 1
